@@ -5,6 +5,7 @@ import { loadAsset, storeAsset } from './assets.js'
 import { makeOrLoadRoom } from './rooms.js'
 import { unfurl } from './unfurl.js'
 
+const HOST = '0.0.0.0'
 const PORT = 5858
 
 // For this example we use a simple fastify server with the official websocket plugin
@@ -49,11 +50,11 @@ app.register(async (app) => {
   })
 })
 
-app.listen({ port: PORT }, (err) => {
+app.listen({ host: HOST, port: PORT }, (err) => {
   if (err) {
     console.error(err)
     process.exit(1)
   }
 
-  console.log(`Server started on port ${PORT}`)
+  console.log(`Server started: ${HOST}:${PORT}`)
 })

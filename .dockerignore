@@ -1,3 +1,6 @@
+/.assets
+/.rooms
+
 # dependencies
 /node_modules
 
